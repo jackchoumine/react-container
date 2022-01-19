@@ -16,9 +16,9 @@ const prodConfig = {
       name: 'container',
       remotes: {
         // NOTE 通过环境变量获取 remote 模块的地址
-        marketing: `marketing@http://localhost:3001/remoteEntry.js`,
-        auth: `auth@http://localhost:3002/remoteEntry.js`,
-        dashboard: `dashboard@http://localhost:3003/remoteEntry.js`,
+        marketing: `marketing@https://jackchoumine.github.io/react-marketing/remoteEntry.js`,
+        auth: `auth@https://jackchoumine.github.io/react-auth/remoteEntry.js`,
+        dashboard: `dashboard@https://jackchoumine.github.io/vue3-dashboard/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),
