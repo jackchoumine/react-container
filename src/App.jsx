@@ -16,8 +16,8 @@ const generateClassName = createGenerateClassName({
 const history = createBrowserHistory()
 
 export default () => {
-  const [isSignedIn, setIsSignedIn] = useState(window.localStorage.getItem('isSignedIn') === 'true')
-  const [user, setUser] = useState(JSON.parse(window.localStorage.getItem('user')))
+  const [isSignedIn, setIsSignedIn] = useState(window.sessionStorage.getItem('isSignedIn') === 'true')
+  const [user, setUser] = useState(JSON.parse(window.sessionStorage.getItem('user')))
 
   useEffect(() => {
     if (isSignedIn) {
@@ -31,8 +31,8 @@ export default () => {
         <div>
           <Header
             onSignOut={() => {
-              window.localStorage.removeItem('isSignedIn')
-              window.localStorage.removeItem('user')
+              window.sessionStorage.removeItem('isSignedIn')
+              window.sessionStorage.removeItem('user')
               window.sessionStorage.removeItem('user')
               setIsSignedIn(false)
             }}
@@ -46,8 +46,8 @@ export default () => {
                     setUser(user)
                     // 使用本地存储
                     window.sessionStorage.setItem('user', JSON.stringify(user))
-                    window.localStorage.setItem('user', JSON.stringify(user))
-                    window.localStorage.setItem('isSignedIn', JSON.stringify(true))
+                    window.sessionStorage.setItem('user', JSON.stringify(user))
+                    window.sessionStorage.setItem('isSignedIn', JSON.stringify(true))
                     setIsSignedIn(true)
                   }}
                 />
