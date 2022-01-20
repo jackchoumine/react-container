@@ -1,1 +1,10 @@
-<!doctype html><html><head></head><body><div id="root"></div><script src="main.3100a973bbcb9d52df18.js"></script></body></html>
+<!doctype html><html><head></head><body><div id="root"></div><script>
+  // 这段代码要放在其他js的前面
+  (function(){
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script><script src="main.3100a973bbcb9d52df18.js"></script></body></html>
